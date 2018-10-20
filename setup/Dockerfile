@@ -1,0 +1,11 @@
+FROM mongo
+
+# Create app directory
+WORKDIR /usr/src/configs
+
+# Install app dependencies
+COPY replicaSet.js .
+COPY setup.sh .
+
+# RUN 명령어는 컨테이너가 생성되기 이전 시점에 즉시 실행되지만 CMD 명령어는 컨테이너가 생성된 이후에 실행된다.
+CMD ["chmod", "+x", "/usr/src/configs/setup.sh"]
