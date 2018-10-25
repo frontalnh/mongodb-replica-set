@@ -1,3 +1,4 @@
+rs.initiate();
 cfg = {
   _id: 'rs0',
   members: [
