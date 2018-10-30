@@ -26,7 +26,7 @@ You need to make your own data base.
 ### Check which server is Primary node
 
 ```bash
-docker exec mongodb-replicaset_mongo-rs0-1_1 bash -c 'mongo --eval "rs.status()"'
+docker exec mongodb-replica-set_mongo-rs0-1_1 bash -c 'mongo --eval "rs.status()"'
 ```
 
 result
