@@ -17,7 +17,7 @@ services:
     command: --replSet rs0
     command: --config ./conf/mongo.conf
     ports:
-      - '27018:27017'
+      - '27018:27018'
     volumes:
       - ./mongo-rs0-2/data:/data/db
       - ./mongo-rs0-2/conf:/conf
@@ -27,10 +27,10 @@ services:
     command: --replSet rs0
     command: --config ./conf/mongo.conf
     ports:
-      - '27019:27017'
+      - '27019:27019'
     volumes:
       - ./mongo-rs0-3/data:/data/db
-      - ./mongo-rs0-2/conf:/conf
+      - ./mongo-rs0-3/conf:/conf
 
   setup-rs:
     image: 'setup-rs'

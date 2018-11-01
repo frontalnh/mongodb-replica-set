@@ -11,12 +11,37 @@ This project makes it easy to build a MongoDB replica set circumstances by using
 This project uses a Docker container for virtualizing Database circumstances.
 Therefore, **Docker** must be installed
 
+To set localhost host environment, **Direnv** must be installed
+
+**how to install direnv?**
+
+install with brew
+
+```sh
+brew install direnv
+```
+
+set bash configuration(if you use bash)
+
+```sh
+cd ~/.bashrc
+
+add below config
+eval "$(direnv hook bash)"
+```
+
 ## Installation
 
 Pull all the necessary docker image from docker hub and set up replica set configuration
 
 ```bash
 docker-compose up
+```
+
+Set host name so that localhost can connect to docker container's internal ip with given mongodb configuration setting
+
+```bash
+direnv allow
 ```
 
 ## Setup database
