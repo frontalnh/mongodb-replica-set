@@ -22,12 +22,16 @@ brew install direnv
 ```
 
 set bash configuration(if you use bash)
+set zsh configuration(if you use zsh)
 
 ```sh
-cd ~/.bashrc
+cd ~/.bashrc or cd ~/.zshrc
 
-add below config
-eval "$(direnv hook bash)"
+add below configuration
+eval "$(direnv hook bash)" or eval "$(direnv hook zsh)"
+
+apply
+source ~/.bashrc or source ~/.zshrc
 ```
 
 ## Installation
@@ -44,9 +48,19 @@ Set host name so that localhost can connect to docker container's internal ip wi
 direnv allow
 ```
 
-## Setup database
+## Set host for connect to docker inner network
 
-You need to make your own data base.
+Changing directory to /dev triggers direnv setting so that hostname mongo-rs0-1, mongo-rs0-2, mongo-rs0-3 will be registered in you pc
+
+```sh
+cd dev
+```
+
+**If you have Err: direnv: error .envrc is blocked. Run `direnv allow` to approve its content.**
+
+```bash
+direnv allow
+```
 
 ### Check which server is Primary node
 
@@ -59,12 +73,16 @@ result
 
 In members field you can find member who has "PRIMARY" in "stateStr" field, and that is a Primary Node
 
-### Enter docker container which serves Primary MongoDB Server
-
-After you have successfully found out which container is serving primary node, you can enter that container by below command
+### Connect to replica set
 
 ```bash
-docker exec -it _container_that_serves_primary_node_ bash
+mongo 'mongodb://test:test1234@mongo-rs0-1,mongo-rs0-2,mongo-rs0-3/test?replicaSet=rs0'
+```
+
+### Connect to primary node
+
+```bash
+mongo --host `mongo mongo-rs0-1:27017 --quiet --eval "db.isMaster()['primary']"`
 ```
 
 ### Create Account
@@ -86,10 +104,4 @@ db.createUser(
  { user: "test",
  pwd: "test1234",
  roles: ['readWrite','userAdmin'] } )
-```
-
-### Login to the created database
-
-```bash
-mongo -u test -p test1234 testdb
 ```
