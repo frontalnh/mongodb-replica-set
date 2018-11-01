@@ -1,10 +1,10 @@
-db['admin'].createUser({
+db.getSiblingDB('admin').createUser({
   user: 'root',
   pwd: 'test1234',
   roles: [{ role: 'root', db: 'admin' }]
 });
 
-db['test'].createUser({
+db.getSiblingDB('test').createUser({
   user: 'test',
   pwd: 'test1234',
   roles: ['readWrite', 'userAdmin']
