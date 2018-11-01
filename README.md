@@ -56,7 +56,7 @@ Changing directory to /dev triggers direnv setting so that hostname mongo-rs0-1,
 cd dev
 ```
 
-**If you have Err: direnv: error .envrc is blocked. Run `direnv allow` to approve its content.**
+If you have Err: **direnv: error .envrc is blocked** Run `direnv allow` to approve its content.
 
 ```bash
 direnv allow
