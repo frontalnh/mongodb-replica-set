@@ -48,7 +48,7 @@ Set host name so that localhost can connect to docker container's internal ip wi
 direnv allow
 ```
 
-## Set host for connect to docker inner network
+## Set host for connecting to docker inner network
 
 Changing directory to /dev triggers direnv setting so that hostname mongo-rs0-1, mongo-rs0-2, mongo-rs0-3 will be registered in you pc
 
