@@ -76,7 +76,7 @@ In members field you can find member who has "PRIMARY" in "stateStr" field, and 
 ### Connect to replica set
 
 ```bash
-mongo 'mongodb://test:test1234@mongo-rs0-1,mongo-rs0-2,mongo-rs0-3/test?replicaSet=rs0'
+mongo 'mongodb://test:test1234@mongo-rs0-1:27017,mongo-rs0-2:27018,mongo-rs0-3:27019/test?replicaSet=rs0'
 ```
 
 ### Connect to primary node
