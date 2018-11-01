@@ -27,10 +27,10 @@ set zsh configuration(if you use zsh)
 ```sh
 cd ~/.bashrc or cd ~/.zshrc
 
-add below configuration
+# add below configuration
 eval "$(direnv hook bash)" or eval "$(direnv hook zsh)"
 
-apply
+# apply
 source ~/.bashrc or source ~/.zshrc
 ```
 
