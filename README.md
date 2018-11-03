@@ -25,7 +25,7 @@ set bash configuration(if you use bash)
 set zsh configuration(if you use zsh)
 
 ```sh
-cd ~/.bashrc or cd ~/.zshrc
+vi ~/.bashrc or vi ~/.zshrc
 
 # add below configuration
 eval "$(direnv hook bash)" or eval "$(direnv hook zsh)"
