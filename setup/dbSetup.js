@@ -18,39 +18,41 @@ db.getSiblingDB('test').users.drop();
 db.getSiblingDB('test').businesses.drop();
 db.getSiblingDB('test').staffs.drop();
 
-db.getSiblingDB('test').users.insert(
-  {
-    _id: ObjectId('5ba1a2f9461fa20d1f40cb7c'),
-    password: '$2b$10$L/ob8iCadRusCzICb2htpOWomuZtGKuyzZDbWjfLCqw1FAzIHoIxC',
-    firstName: 'sdf',
-    lastName: 'sdf',
-    removed: false,
-    isPending: false,
-    futureBWX: 0,
-    bluePoint: 115731850,
-    userTokenId: '',
-    bankAccoundToken: '',
-    prepaidCardToken: '',
-    bankCardToken: '',
-    hyperWalletAsset: '',
-    toBeAccumulatedBp: 704,
-    phone: '01042992920',
-    email: 'test@test.com',
-    userType: 'NORMAL',
-    business: ObjectId('5ba1a375461fa20d1f40cb7d'),
-    passwordChangedTime: ISODate('2018-10-16T14:39:28.254Z'),
-    pushSettings: null,
-    ctime: ISODate('2018-10-16T14:39:28.254Z'),
-    mtime: ISODate('2018-10-16T14:39:28.254Z'),
-    createdAt: 1539700768254.0,
-    updatedAt: 1539700768254.0,
-    __v: 0,
-    stripeInfo: {},
-    fcmToken: 'abc',
-    sixDigitPassword: '000000'
+db.getSiblingDB('test').users.insert({
+  _id: ObjectId('5ba1a2f9461fa20d1f40cb7c'),
+  password: '$2b$10$L/ob8iCadRusCzICb2htpOWomuZtGKuyzZDbWjfLCqw1FAzIHoIxC',
+  name: '',
+  removed: false,
+  isPending: false,
+  futureBWX: 0,
+  bluePoint: 113921189,
+  userTokenId: '',
+  bankAccoundToken: '',
+  prepaidCardToken: '',
+  bankCardToken: '',
+  hyperWalletAsset: '',
+  toBeAccumulatedBp: 53220,
+  phone: '01042992920',
+  email: 'test@test.com',
+  userType: 'ADMIN',
+  business: ObjectId('5ba1a375461fa20d1f40cb1a'),
+  passwordChangedTime: ISODate('2018-10-16T14:39:28.254Z'),
+  pushSettings: null,
+  ctime: ISODate('2018-10-16T14:39:28.254Z'),
+  mtime: ISODate('2018-10-16T14:39:28.254Z'),
+  createdAt: 1539700768254.0,
+  updatedAt: 1539700768254.0,
+  __v: 0,
+  statInfo: {
+    totalDeposit: 13505,
+    totalWithdrawal: 895630
   },
-  {}
-);
+  stripeInfo: {},
+  fcmToken: 'abc',
+  sixDigitPassword: '000000',
+  name: '',
+  status: 'ACTIVATED'
+});
 
 db.getSiblingDB('test').users.insert({
   _id: ObjectId('5bf2147b6a618f3ca495e501'),
